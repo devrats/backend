@@ -8,7 +8,7 @@ import { connectToDB } from './connection.js';
 config();
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(bodyParser.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/data', userDataRoutes);
